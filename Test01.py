@@ -19,8 +19,7 @@ for i in items:
     print(i.id, i.properties["eo:cloud_cover"])
 
 item = min(items, key=lambda i: i.properties["eo:cloud_cover"])
-print("Using:", item.id)
-
+print("Using:", item.id) 
 bands = ["green", "red", "nir08", "swir16", "lwir11", "qa_pixel"]
 da = stackstac.stack([item], assets=bands, bounds_latlon=bbox, epsg=32643,
                      resolution=30, dtype="float64", fill_value=0,
