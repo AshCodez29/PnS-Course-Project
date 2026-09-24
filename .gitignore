@@ -1,0 +1,36 @@
+# Raw satellite data (huge, re-downloadable)
+data/raw/
+*.tif
+*.tiff
+*.TIF
+*.jp2
+*.hdf
+*.nc
+
+# Downloaded bundles
+*.tar
+*.tar.gz
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Credentials / config
+.env
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Optional: uncomment if processed CSV gets large
+# data/processed/*.csv
