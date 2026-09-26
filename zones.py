@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("pune_pixels.csv")
 
@@ -31,5 +32,6 @@ groups = [g.temp_c for _, g in df.groupby("zone")]
 print(stats.f_oneway(*groups))
 print(pairwise_tukeyhsd(df.temp_c, df.zone))
 
-# 3. Boxplot
-df.boxplot(column="temp_c", by="zone", figsize=(7, 5))
+# # 3. Boxplot
+# df.boxplot(column="temp_c", by="zone", figsize=(7, 5))
+# plt.show()
