@@ -35,3 +35,16 @@ print(pairwise_tukeyhsd(df.temp_c, df.zone))
 # # 3. Boxplot
 # df.boxplot(column="temp_c", by="zone", figsize=(7, 5))
 # plt.show()
+
+#4 Zone Map 
+zone_map = np.select(
+    [ndwi > 0, ndvi >= 0.4, (ndbi > 0) & (ndvi < 0.2)],
+    [3, 2, 1], default=0
+)  # 0=Mixed/Bare, 1=Built-up, 2=Vegetation, 3=Water
+
+plt.figure(figsize=(7,6))
+plt.imshow(zone_map, cmap="tab10")
+plt.title("Final Land-Cover Classification")
+plt.colorbar(ticks=[0,1,2,3], label="0=Mixed 1=Built-up 2=Veg 3=Water")
+plt.axis("off")
+plt.show()
