@@ -22,6 +22,3 @@ groups = [g.temp_c for _, g in df.groupby("zone")]
 print(stats.f_oneway(*groups))
 print(pairwise_tukeyhsd(df.temp_c, df.zone))
 
-# 3. Boxplot
-df.boxplot(column="temp_c", by="zone", figsize=(7, 5))
-plt.show()
